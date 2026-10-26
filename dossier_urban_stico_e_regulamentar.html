@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier de Regulamentação Urbanística e Edificatória — Parcela São Domingos de Benfica</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .shadow-card { shadow: none !important; border: 1px solid #ccc !important; }
+            .page-break { page-break-before: always; }
+        }
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Top Status Bar (Technical Meta) -->
+    <header class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-microchip text-blue-400 mr-1"></i> Assistente Técnico Urbanístico</span>
+                <span><i class="fa-solid fa-calendar-days text-slate-400 mr-1"></i> Atualizado: 19 e 26 Outubro 2026</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="bg-blue-900/60 text-blue-300 px-2 py-0.5 rounded text-[10px] font-mono border border-blue-700/50">PARCELA #38.7508-9.1744</span>
+                <span class="bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-mono border border-emerald-700/50">STATUS: VERIFICADO</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Title Header Section -->
+    <section class="bg-gradient-to-r from-slate-900 via-brand-900 to-slate-900 text-white border-b border-slate-800 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <div class="flex items-center space-x-2 text-blue-400 text-xs font-semibold uppercase tracking-widest mb-1">
+                        <span>Município de Lisboa</span>
+                        <span>•</span>
+                        <span>São Domingos de Benfica</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                        Relatório de Regulamentação Urbanística e Edificatória
+                    </h1>
+                    <p class="mt-2 text-sm text-slate-300 max-w-3xl">
+                        Análise de conformidade técnica normativo-legal para empreendimento misto (Habitação e Serviços). Compilação estrita fundamentada nas fontes primárias carregadas.
+                    </p>
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3 no-print">
+                    <button onclick="window.print()" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <i class="fa-solid fa-print mr-2"></i> Imprimir / PDF
+                    </button>
+                    <button onclick="copyShareLink()" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-sm transition-all">
+                        <i class="fa-solid fa-share-nodes mr-2"></i> Copiar Dados
+                    </button>
+                </div>
+            </div>
+
+            <!-- Technical Characterization Grid -->
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-6 border-t border-slate-800/80 text-xs">
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Coordenadas WGS84</span>
+                    <span class="font-mono text-slate-100 font-semibold">38.7508, -9.1744</span>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Área da Parcela</span>
+                    <span class="font-semibold text-slate-100">26.316,52 m²</span>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Uso Pretendido</span>
+                    <span class="font-semibold text-blue-300">Misto (Habit. + Serv.)</span>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Número de Pisos</span>
+                    <span class="font-semibold text-slate-100">5 Pisos</span>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Área de Construção</span>
+                    <span class="font-semibold text-slate-100">1.125,00 m²</span>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                    <span class="block text-slate-400 text-[10px] uppercase tracking-wider">Freguesia / Concelho</span>
+                    <span class="font-semibold text-slate-100">S. Domingos Benfica</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Navigation & Search Toolbar -->
+    <nav class="sticky top-0 z-30 bg-white border-b border-slate-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2.5">
+                <!-- Navigation Tabs -->
+                <div class="flex items-center overflow-x-auto space-x-1 sm:space-x-2 py-1 scrollbar-none text-xs sm:text-sm font-medium">
+                    <a href="#sintese" class="px-3 py-1.5 rounded-md bg-blue-50 text-blue-700 font-semibold border border-blue-200 hover:bg-blue-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-list-check mr-1.5 text-blue-600"></i> Quadro Síntese
+                    </a>
+                    <a href="#pdm" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-map-location-dot mr-1.5 text-slate-400"></i> PDM
+                    </a>
+                    <a href="#rjue" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-gavel mr-1.5 text-slate-400"></i> RJUE
+                    </a>
+                    <a href="#rgeu" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-building mr-1.5 text-slate-400"></i> RGEU
+                    </a>
+                    <a href="#acessibilidades" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-wheelchair mr-1.5 text-slate-400"></i> Acessibilidades
+                    </a>
+                    <a href="#sce" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 whitespace-nowrap transition-colors">
+                        <i class="fa-solid fa-bolt mr-1.5 text-slate-400"></i> SCE (Energia)
+                    </a>
+                </div>
+
+                <!-- Global Search Box -->
+                <div class="relative min-w-[240px] max-w-xs">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" id="tableSearch" onkeyup="filterAllTables()" placeholder="Pesquisar artigo, parâmetro ou requisito..." class="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-100 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Body -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- SECTION: QUADRO SÍNTESE DO LOTE (HIGHLIGHTED FIRST / AS REQUESTED) -->
+        <section id="sintese" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-900 text-white p-5 sm:p-6 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-2">
+                            <i class="fa-solid fa-star text-amber-400 mr-1.5"></i> Resumo Consolidado Exclusivo
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-white">Quadro Síntese do Lote</h2>
+                        <p class="text-xs text-slate-400 mt-1">Organizado exatamente por 5 frentes regulamentares e 5 colunas de verificação técnica.</p>
+                    </div>
+                    <div class="text-xs text-slate-400 bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700 font-mono">
+                        Regra: 5 Linhas × 5 Colunas
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-4 w-1/12 border-r border-slate-200">Frente</th>
+                                <th class="p-4 w-3/12 border-r border-slate-200">Itens Verificados</th>
+                                <th class="p-4 w-3/12 border-r border-slate-200">Condições Imperativas</th>
+                                <th class="p-4 w-3/12 border-r border-slate-200">Condições Condicionais / a Confirmar</th>
+                                <th class="p-4 w-2/12">SEM FONTE</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white font-normal">
+                            <!-- Line 1: PDM -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">
+                                    <span class="inline-block px-2 py-1 rounded bg-blue-100 text-blue-800 border border-blue-200 font-mono">PDM</span>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Uso misto (habitação e terciário/serviços) admitido em solo urbano (Espaços Centrais e Habitacionais a Consolidar); Índice de edificabilidade base de 1,2 (ou 1,7 em POLU); Cércea e número de pisos regulados por concordância com o nivelamento das fachadas da envolvente <span class="text-slate-400 font-mono text-[10px] block mt-1">(Data consulta: 19/10/2026)</span>.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    <ul class="list-disc list-inside space-y-1">
+                                        <li>Cumprimento da cota mínima de uso não habitacional (exigida se a área da parcela for ≥ 0,5 ha);</li>
+                                        <li>Implantação e subsolo limitados por solo orgânico direto ≥ 20% e Superfície Vegetal Ponderada ≥ 40%;</li>
+                                        <li>Estacionamento privativo e público dimensionado por zonamento e área de pavimento.</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    O enquadramento exato em POLU (Índice 1,2 vs 1,7), a aplicação de majoração até 1,5, a profundidade máxima de empena (15 m ou 18 m para equipamentos) e a verificação de servidões/restrições específicas na parcela dependem da consulta cartográfica definitiva no local.
+                                </td>
+                                <td class="p-4 leading-relaxed text-amber-800 bg-amber-50/30">
+                                    A designação municipal específica "Nível Arqueológico III" e a incidência exata de RAN no concelho de Lisboa (necessária planta de condicionantes municipal oficial).
+                                </td>
+                            </tr>
+                            <!-- Line 2: RJUE -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">
+                                    <span class="inline-block px-2 py-1 rounded bg-indigo-100 text-indigo-800 border border-indigo-200 font-mono">RJUE</span>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Operação classificada como "Obras de construção" (construção nova) sujeita a procedimento de licenciamento municipal; Submissão desmaterializada com elementos instrutórios do Anexo I e V da Portaria n.º 320/2026/1 em formato PDF/A, DWG e ODS/XLS/XLSX assinados digitalmente <span class="text-slate-400 font-mono text-[10px] block mt-1">(Data consulta: 19/10/2026)</span>.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Apresentação de requerimento único, memória descritiva, levantamento topográfico georreferenciado, folha de cálculo de índices editável, termos de responsabilidade e comprovativo de seguro de responsabilidade civil válido.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Prazos de deliberação camarária (120, 150 ou 200 dias conforme a área bruta de construção) e obrigatoriedade de consulta prévia vinculativa à administração central (CCDR / Património Cultural) em razão de servidões/restrições de património arqueológico.
+                                </td>
+                                <td class="p-4 leading-relaxed text-amber-800 bg-amber-50/30">
+                                    Requisitos de taxas municipais específicas aplicáveis pela Câmara Municipal de Lisboa ao processo (necessário regulamento de taxas municipal).
+                                </td>
+                            </tr>
+                            <!-- Line 3: RGEU -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">
+                                    <span class="inline-block px-2 py-1 rounded bg-teal-100 text-teal-800 border border-teal-200 font-mono">RGEU</span>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Altura piso a piso mínima de 2,70 m e pé-direito livre mínimo de 2,40 m na habitação (2,20 m em zonas secundárias e 3,00 m em comércio/serviços); Áreas mínimas de compartimentos e vãos de iluminação/ventilação direta ≥ 10% da área útil (mínimo absoluto de 1,08 m²); Afastamento mínimo entre fachadas com vãos habitacionais de 10 m e logradouro com profundidade ≥ metade da altura e mínimo de 6 m / 40 m² <span class="text-slate-400 font-mono text-[10px] block mt-1">(Data consulta: 26/10/2026)</span>.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Garantir ventilação transversal (cruzada) do conjunto de cada habitação; Instalações sanitárias com vão direto ≥ 0,54 m² no tosco ou sistema eficaz de ventilação forçada.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    A conformidade exata da implantação com a regra do plano de 45º sobre o arruamento e os afastamentos a confrontações depende do projeto de arquitetura final.
+                                </td>
+                                <td class="p-4 leading-relaxed text-amber-800 bg-amber-50/30">
+                                    Valores definitivos de dimensionamento métrico exato para tipologias específicas de fogos ainda não projetadas (necessário projeto de arquitetura detalhado).
+                                </td>
+                            </tr>
+                            <!-- Line 4: ACESSIBILIDADES -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">
+                                    <span class="inline-block px-2 py-1 rounded bg-purple-100 text-purple-800 border border-purple-200 font-mono">DL 163/2006</span>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Percurso acessível desde o exterior até às entradas e espaços do edifício; Portas de entrada com largura útil ≥ 0,87 m (e ≥ 0,77 m no interior); Corredores comuns com largura ≥ 1,20 m; Corrimãos regulares em rampas e escadas <span class="text-slate-400 font-mono text-[10px] block mt-1">(Data consulta: 26/10/2026)</span>.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Obrigatoriedade de instalação de ascensores (edifício de habitação de 5 pisos) com cabina mínima de 1,10 m × 1,40 m e porta de 0,80 m; Integração de instalações sanitárias adaptadas (mínimo 10% nos serviços e 1 adaptável por fogo); Lugares de estacionamento reservados dimensionados com módulo de 2,50 m + 1,00 m de faixa lateral.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Aplicação de exceções por desproporcionalidade não se aplica a edifícios novos, sendo o cumprimento integral obrigatório; a verificação de nós de articulação específica depende do arranjo arquitetónico final.
+                                </td>
+                                <td class="p-4 leading-relaxed text-amber-800 bg-amber-50/30">
+                                    Custos financeiros exatos de adaptação ou fichas de verificação de desenho de pormenor em obra (necessário projeto de especialidade de acessibilidades).
+                                </td>
+                            </tr>
+                            <!-- Line 5: SCE -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">
+                                    <span class="inline-block px-2 py-1 rounded bg-emerald-100 text-emerald-800 border border-emerald-200 font-mono">DL 101-D/2020</span>
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Edifício classificado como edifício novo com necessidades quase nulas de energia (NZEB); Obrigatoriedade de obtenção de Pré-Certificado Energético (PCE) no projeto e Certificado Energético (CE) na conclusão; Classe energética mínima B- ou superior (Ntc ≤ Nt e IEEpr,S ≤ IEEref,S) <span class="text-slate-400 font-mono text-[10px] block mt-1">(Data consulta: 26/10/2026)</span>.
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    Cumprimento dos limites de energia primária nominal; Isolamento térmico da envolvente para a Zona Climática I1/V1 (paredes opacas Uref = 0,70 W/(m².°C) e vãos Uw/Uref = 4,30 W/(m².°C)); Taxa de renovação de ar horária Rph ≥ 0,5 h⁻¹ na habitação; Isolamento de tubagens de AQS com resistência R ≥ 0,25 (m².°C)/W; Exclusão de caldeiras autónomas a combustíveis fósseis (proibição de incentivos desde 01/01/2025 ao abrigo do DL n.º 11/2025).
+                                </td>
+                                <td class="p-4 border-r border-slate-200 leading-relaxed text-slate-700">
+                                    A escolha exata da tipologia de sistemas técnicos de climatização e fontes de energia renovável (solar térmica, fotovoltaica e/ou bomba de calor) para atingir os rácios RenHab e RenC&S depende do projeto de térmica e especialidades.
+                                </td>
+                                <td class="p-4 leading-relaxed text-amber-800 bg-amber-50/30">
+                                    Cálculos nominais exatos por meio de simulação dinâmica de cargas térmicas do projeto específico (necessário projeto de desempenho energético elaborado por Perito Qualificado).
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: PDM DE LISBOA DETAILED TABLE -->
+        <section id="pdm" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 text-white p-4 sm:p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-blue-600 rounded-lg text-white font-bold text-xs">PDM</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Plano Diretor Municipal de Lisboa (RPDML)</h3>
+                            <p class="text-xs text-slate-300">Regulamento publicado pelo Aviso n.º 11622/2012, com republicação n.º 703/2020 e alteração n.º 383/2023</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded font-mono">Consulta: 19/10/2026</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse searchable-table">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-3.5 w-1/12 border-r border-slate-200">Item</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Exigência Legal (Diploma + Artigo)</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Valor ou Critério (SI)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Citação Literal (máx. 30 palavras)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Efeito na Parcela / Condição do Projeto</th>
+                                <th class="p-3.5 w-1/12">Data Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">1. Categoria de solo e usos compatíveis</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 37.º, n.º 1 a); Art. 41.º, n.os 3-4; Art. 59.º, n.os 1-5</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Solo Urbano (Espaços Centrais a Consolidar). Cota não habitacional ≥ 10% se parcela entre 0,5 e 1 ha.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Admitem-se os usos de habitação, terciário, turismo, equipamento, indústria compatível e micro logística, nos termos definidos no artigo 4.º do presente Regulamento."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Uso misto compatível. Deve assegurar a coexistência funcional com a habitação e cumprir cota não habitacional mínima por ter área de 2,63 ha.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">2. Índice de utilização e área máxima</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 38.º, n.º 3; Art. 60.º, n.º 3, als. e) f)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Índice edificabilidade Ie base = 1,2 (1,7 em POLU). Majoração excecional até 1,5 (2,0 em POLU).</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Índice de edificabilidade é de 1,2 na generalidade das áreas e de 1,7 nas áreas onde se pretende o desenvolvimento das polaridades urbanas (POLU)..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Superfície de Pavimento máxima edificável calculada por Ie × área da parcela. Majoração sujeita a créditos de construção.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">3. Cércea e número de pisos</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 60.º, n.º 2 e n.º 3 a)-c); Art. 42.º, n.º 6 b)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Nivelamento por concordância com fachadas envolventes. Máx. 25 m em transição para Traçado C.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Concordância com o nivelamento das alturas das fachadas e o alinhamento do traçado urbano, nas zonas de transição com as áreas consolidadas..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Os 5 pisos propostos devem articular-se com a cércea envolvente da Estrada da Luz, avaliando o impacto visual.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">4. Afastamentos e empenas</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 42.º, n.º 2; Art. 43.º, n.os 1-4; Art. 60.º, n.º 3 d)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Profundidade máxima de empena: 15 m (18 m para equipamento/turismo). Plano a 45°.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"a profundidade máxima das empenas, sem considerar as varandas e os corpos balançados, é de 15 metros, com exceção dos estabelecimentos hoteleiros e equipamentos..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Respeitar os alinhamentos definidos para a Estrada da Luz e Rua Ernâni Lopes, limitando a profundidade a 15 m.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">5. Implantação e permeabilidade</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 4.º d); Art. 44.º, n.os 6-7; Art. 60.º, n.º 3 g)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Solo orgânico direto A ≥ 20% da parcela. Superfície Vegetal Ponderada Svp ≥ 40%.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Aplicação da superfície vegetal ponderada (Svp)... calculada de acordo com o artigo 4.º e os seguintes parâmetros... Svp >= 0,4.Aref e A >= 0,2.Aref."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">No mínimo 5.263 m² de solo orgânico livre de qualquer construção em subsolo/cave. Svp global ≥ 40%.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">6. Estacionamento regulamentar</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 74.º n.º 1; Art. 75.º n.º 3; Anexos X e XI</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Habitação: 0,8 a 1,5 lug/100m² Sp. Serviços: 0,5 a 1,5 lug/100m² Sp conforme zonamento A/B/C/D.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os valores mínimos e máximos dos parâmetros de dimensionamento de estacionamento no interior da parcela ou lote... são os constantes do Anexo X..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Prever lugares privativos e públicos no interior do lote/cave em função do uso misto e área de pavimento calculada.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">7. Condicionantes e Servidões</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RPDML, Art. 7.º; Art. 13.º n.º 7; Art. 33.º; Plantas I/II</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Zona Mista de ruído; sismicidade; acompanhamento arqueológico em subsolo. Restrição de servidão aeronáutica.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Toda a área do território municipal é classificada como zona mista..." / "Nas áreas integradas na reserva ecológica nacional só são permitidas..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Obrigatório dimensionamento estrutural antissísmico, estudo hidrogeológico (se bacia > 75ha) e parecer arqueológico.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: RJUE DETAILED TABLE -->
+        <section id="rjue" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 text-white p-4 sm:p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-indigo-600 rounded-lg text-white font-bold text-xs">RJUE</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Regime Jurídico da Urbanização e da Edificação</h3>
+                            <p class="text-xs text-slate-300">Decreto-Lei n.º 555/99 (redação DL 10/2024 e DL 108/2026) e Portaria n.º 320/2026/1</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded font-mono">Consulta: 19/10/2026</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse searchable-table">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-3.5 w-1/12 border-r border-slate-200">Item</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Exigência Legal (Diploma + Artigo)</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Valor ou Critério (SI)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Citação Literal (máx. 30 palavras)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Obrigação para o Futuro Projeto</th>
+                                <th class="p-3.5 w-1/12">Data Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">1. Tipo de operação urbanística</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Artigo 2.º, alíneas a), b) e j)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Classificação: «Obras de construção» (criação de novas edificações). Parcela de 26.316,52 m².</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"«Obras de construção», as obras de criação de novas edificações;"</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Enquadrar formalmente como obra de construção nova no requerimento do Anexo I da Portaria n.º 320/2026/1.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">2. Procedimento aplicável</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Artigo 4.º, n.º 2, alíneas c) e h)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Procedimento: Licenciamento Municipal (ausência de Plano de Pormenor/loteamento e servidão de património).</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Estão sujeitas a licença: [...] c) As obras de construção... em área não abrangida por: i) Plano de pormenor... h) As obras de construção... em áreas sujeitas a servidão..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Submeter pedido de licenciamento junto da Câmara Municipal de Lisboa. Facultativo promover Pedido de Informação Prévia (Art. 14.º).</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">3. Elementos instrutórios</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Portaria n.º 320/2026/1, Art. 1.º, Anexo I, I-C e V</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Requerimento único, memória descritiva, levantamento georreferenciado, folha de índices ODS/XLSX e especialidades.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"O pedido ou comunicação são acompanhados dos elementos instrutórios previstos em portaria... A folha de cálculo de índices... é entregue em formato ODS, XLS ou XLSX."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Instruir o processo com o conjunto completo de peças escritas, desenhadas e ficheiros de cálculo parametrizados.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">4. Formatos e entrega digital</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Art. 8.º-A, 9.º; Portaria 320/2026/1, Anexo VI</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Submissão desmaterializada. Ficheiros PDF/A, planta de implantação DWG e quadros em ODS/XLSX com assinatura qualificada.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"As peças escritas e desenhadas são entregues em formato PDF/A... A planta de implantação deverá ser ainda apresentada em formato dwg..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Estruturar a entrega na plataforma digital municipal de Lisboa cumprindo a codificação rigorosa das extensões.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">5. Termos de responsabilidade</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Artigo 10.º; Portaria 320/2026/1, Anexo V e VII</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Declarações dos autores/coordenador, inscrição em ordens profissionais e apólices de seguro válidas.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"O requerimento ou comunicação é sempre instruído com declaração dos autores dos projetos... e do coordenador dos projetos, que ateste a compatibilidade..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Anexar as minutas do Anexo VII devidamente validadas e certificar que o capital seguro cobre o valor estimado da obra.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">6. Consultas externas / CCDR</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Artigos 13.º, 13.º-A e 24.º, n.º 2, al. a)</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Consulta vinculativa via CCDR no prazo imperativo de 20 dias devido à restrição de património arqueológico.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"A consulta de entidades da administração central... que se devam pronunciar sobre a operação urbanística em razão da localização, é efetuada através de uma única entidade..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Integrar no processo o relatório de avaliação arqueológica prévia para validação pelas autoridades competentes.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">7. Prazos e caducidade</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">RJUE, Artigos 23.º, 35.º, 71.º, 102.º-B, 107.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Prazo de decisão: 150 a 200 dias (sujeito a deferimento tácito). Caducidade do título em 1 ano sem início da obra.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"A câmara municipal delibera sobre o pedido de licenciamento: [...] c) No prazo de 200 dias... A deliberação prevista no número anterior está sujeita a deferimento tácito."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Planear a calendarização para evitar a caducidade do procedimento e dar cumprimento aos prazos de pagamento de taxas.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">19/10/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: RGEU DETAILED TABLE -->
+        <section id="rgeu" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 text-white p-4 sm:p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-teal-600 rounded-lg text-white font-bold text-xs">RGEU</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Regulamento Geral das Edificações Urbanas</h3>
+                            <p class="text-xs text-slate-300">Decreto-Lei n.º 38 382 (alterado pelos DL 650/75, DL 463/85, DL 61/93 e DL 50/2008)</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded font-mono">Consulta: 26/10/2026</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse searchable-table">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-3.5 w-1/12 border-r border-slate-200">Item</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Artigo do RGEU</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Valor ou Critério (SI)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Citação Literal (máx. 30 palavras)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Condição a Respeitar no Projeto</th>
+                                <th class="p-3.5 w-1/12">Data Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">1. Pé-direito e altura entre pisos</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Artigo 65.º, n.os 1, 2 e 3</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Habitação: piso a piso ≥ 2,70 m; pé-direito livre ≥ 2,40 m (2,20 m em serviços/circulações). Comércio/Serviços ≥ 3,00 m.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"A altura mínima, piso a piso, em edificações destinadas à habitação é de 2,70m (...), não podendo ser o pé-direito livre mínimo inferior a 2,40m (...)."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Garantir nos 5 pisos a altura mínima regulamentar e assegurar os 3,00 m no piso afeto aos serviços.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">2. Áreas e geometria dos compartimentos</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Artigo 66.º, n.º 1; Artigo 69.º, n.os 1 e 3</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Quarto casal ≥ 10,5m²; duplo ≥ 9m²; simples ≥ 6,5m²; Sala ≥ 10 a 16m²; Cozinha ≥ 6m² (largura ≥ 1,70m). Inscrição de círculos geométricos.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os compartimentos de habitação não poderão ser em número e área inferiores aos indicados no quadro seguinte: (...) Quarto casal 10,5 (...) Quarto duplo 9 (...) Cozinha 6"</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Dimensionar a arquitetura dos fogos respeitando rigorosamente as superfícies úteis e diâmetros mínimos de manobra.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">3. Vãos de iluminação natural</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Artigo 71.º, n.º 1</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Área envidraçada ≥ 1/10 (10%) da área útil do compartimento, com o limite mínimo absoluto no tosco de 1,08 m².</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os compartimentos das habitações (...) serão sempre iluminados e ventilados por um ou mais vãos (...) em comunicação directa com o exterior e cuja área total não será inferior a um décimo"</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Prever janelas exteriores em todos os compartimentos habitáveis garantindo a taxa mínima de 10% de abertura.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">4. Condições de ventilação</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Artigo 71.º, Artigo 72.º e Artigo 87.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Ventilação transversal (cruzada) no conjunto da habitação; I.S. com vão ≥ 0,54 m² no tosco ou extração mecânica forçada.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Deverá ficar assegurada a ventilação transversal do conjunto de cada habitação, em regra por meio de janelas dispostas em duas fachadas opostas."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Conceber a planta piso com frentes opostas para assegurar ventilação cruzada e condutas mecânicas nas I.S. interiores.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">5. Logradouros e afastamentos</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Artigos 59.º, 60.º, 62.º (§2.º) e 73.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Afastamento entre fachadas habitáveis ≥ 10 m. Logradouro: profundidade ≥ H/2 (mínimo 6 m) e área livre ≥ 40 m². Regra do plano de 45°.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"A distância mínima entre fachadas de edificações nas quais existam vãos de compartimentos de habitação não poderá ser inferior a 10 metros."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Cumprir a regra dos 45° sobre a largura da via e afastar a edificação em 10 m de fachadas fronteiras com vãos habitacionais.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ACESSIBILIDADES DETAILED TABLE -->
+        <section id="acessibilidades" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 text-white p-4 sm:p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-purple-600 rounded-lg text-white font-bold text-xs">DL 163/2006</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Regime de Acessibilidade a Edifícios e Espaços Públicos</h3>
+                            <p class="text-xs text-slate-300">Decreto-Lei n.º 163/2006, de 8 de agosto (Normas Técnicas de Acessibilidade em Anexo)</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded font-mono">Consulta: 26/10/2026</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse searchable-table">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-3.5 w-1/12 border-r border-slate-200">Item</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Referência do Anexo / Diploma</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Valor ou Critério (SI)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Citação Literal (máx. 30 palavras)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Condição a Respeitar no Projeto</th>
+                                <th class="p-3.5 w-1/12">Data Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">1. Percurso acessível exterior/interior</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 1.1, 2.1, 4.3.1, 4.5.1</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Rede contínua sem degraus. Largura útil ≥ 1,20 m. Altura livre ≥ 2,00 m (int) / 2,40 m (ext). Inclinação < 5%.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os edifícios e estabelecimentos devem ser dotados de pelo menos um percurso, designado de acessível, que proporcione o acesso seguro e confortável..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Garantir ligação nivelada e contínua desde a Estrada da Luz até aos átrios de entrada, habitações e serviços.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">2. Vãos de portas e passagens</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.2.3, 4.9.1, 4.9.2</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Entradas principais: largura útil ≥ 0,87 m. Vãos interiores em geral: largura útil ≥ 0,77 m. Altura útil ≥ 2,00 m.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"As portas de entrada/saída dos edifícios e estabelecimentos devem ter um largura útil não inferior a 0,87 m, medida entre a face da folha..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Garantir nas portarias e entradas dos serviços a passagem útil de 0,87 m e no interior dos fogos 0,77 m livres.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">3. Zonas de manobra e corredores</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.3, 3.2.7, 4.4.1</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Corredores comuns ≥ 1,20 m (int fogos ≥ 1,10 m). Rotação 360° com diâmetro Ø ≥ 1,50 m em átrios e a cada 10 m.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os patamares, galerias e corredores devem possuir uma largura não inferior a 1,2 m."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Manter circulações horizontais com 1,20 m livres e prever círculos de manobra de 1,50 m nos patamares de piso.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">4. Corrimãos e barras de apoio</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.4.9, 2.5.9, 4.11</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Altura: 0,85 m a 0,90 m. Pega tubular Ø 0,035 m a 0,05 m. Afastamento parede ≥ 0,035 m. Prolongamento ≥ 0,30 m.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os corrimãos e as barras de apoio devem ter um diâmetro ou largura das superfícies de preensão compreendido entre 0,035 m e 0,05 m..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Instalar corrimãos duplos contínuos dos dois lados de rampas e escadas comuns do edifício.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">5. Ascensores (Obrigatoriedade 5 pisos)</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.7.1 e Secção 3.2.1</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Instalação de elevadores imperativa. Cabina ≥ 1,10 m (largura) × 1,40 m (profundidade). Porta de correr ≥ 0,80 m.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Possuir cabinas com dimensões interiores, medidas entre os painéis da estrutura da cabina, não inferiores a 1,1 m de largura por 1,4 m de profundidade..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Por ter 5 pisos, exige-se imperativamente a instalação de elevadores acessíveis a todos os pisos e caves.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">6. Instalações sanitárias adaptadas</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.9 (2.9.1-2.9.5) e 3.3.4</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Serviços: mín. 10% de instalações sanitárias adaptadas (mín. 1). Cabina ≥ 1,60 m × 1,70 m. Habitação: 1 I.S. adaptável por fogo.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"O espaço interior deve ter dimensões não inferiores a 1,6 m de largura (parede em que está instalada a sanita) por 1,7 m de comprimento..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Prever 1 cabina de I.S. adaptada nos serviços e garantir que a instalação sanitária principal das habitações seja adaptável.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">7. Lugares de estacionamento reservados</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">Anexo, Secção 2.8.1, 2.8.2 e 3.2.6</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Módulo: largura útil ≥ 2,50 m + faixa de acesso lateral ≥ 1,00 m × comprimento ≥ 5,00 m. Lotação segundo tabela legal.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os lugares de estacionamento reservados devem: 1) Ter uma largura útil não inferior a 2,5 m; 2) Possuir uma faixa de acesso lateral com uma largura útil não inferior a 1 m..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Dimensionar no piso de garagem os lugares adaptados com faixa de transferência de 1 m devidamente sinalizada.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">8. Inaplicabilidade de exceções</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 163/2006, Artigo 3.º n.º 1 e Artigo 10.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Edifícios Novos: Cumprimento 100% obrigatório. Exceções aplicam-se exclusivamente a edifícios existentes.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"...o cumprimento das normas técnicas de acessibilidade (...) não é exigível quando as obras necessárias à sua execução sejam desproporcionadamente difíceis..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Em construção nova de raiz não é possível alegar desproporcionalidade para isenção de normas de acessibilidade.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SCE DETAILED TABLE -->
+        <section id="sce" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-800 text-white p-4 sm:p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-emerald-600 rounded-lg text-white font-bold text-xs">SCE</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Sistema de Certificação Energética dos Edifícios</h3>
+                            <p class="text-xs text-slate-300">Decreto-Lei n.º 101-D/2020, alterado pelo DL n.º 11/2025 e Manual SCE (v1)</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded font-mono">Consulta: 26/10/2026</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="w-full text-left text-xs border-collapse searchable-table">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider">
+                                <th class="p-3.5 w-1/12 border-r border-slate-200">Item</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Exigência Legal (Diploma + Artigo)</th>
+                                <th class="p-3.5 w-2/12 border-r border-slate-200">Valor ou Critério (SI)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Citação Literal (máx. 30 palavras)</th>
+                                <th class="p-3.5 w-3/12 border-r border-slate-200">Condição a Respeitar no Projeto</th>
+                                <th class="p-3.5 w-1/12">Data Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">1. Âmbito e NZEB</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Art. 3.º, 6.º; Manual SCE 3.2.1</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Classificação: Edifício Novo. Obrigação legal de ser Edifício de Necessidades Quase Nulas de Energia (NZEB).</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os edifícios novos devem ser edifícios com necessidades quase nulas de energia."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Projetar a arquitetura e sistemas integrando estratégias passivas para minimizar consumos de energia.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">2. Indicadores de Desempenho</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Art. 4.º; Manual SCE Cap. 16-17</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Energia Primária nominal kWhEP/(m².ano). Limites: Ntc ≤ Nt (Habitação) e IEEpr,S ≤ IEEref,S (Serviços).</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"O desempenho energético do edifício é expresso através de um indicador numérico que representa a energia primária necessária para satisfazer as necessidades..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">O consumo global de energia primária do edifício previsto não pode superar os valores de referência normativos.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">3. Transmitância e envolvente (Lisboa I1/V1)</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Art. 6.º; Manual SCE Cap. 7, 8, 16</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Paredes opacas Uref = 0,70 W/(m².°C); Vãos envidraçados Uw/Uref = 4,30 W/(m².°C); Proteção solar móvel se radiação > 300 W/m².</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"O coeficiente de transmissão térmica dos vãos envidraçados caracteriza a transferência de calor (...) O valor do coeficiente de transmissão térmica..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Dimensionar isolamento contínuo em fachadas, caixilharia de elevado corte térmico e dispositivos de sombreamento móveis.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">4. Ventilação e Qualidade do Ar</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Art. 6.º; Manual SCE Secção 9.2</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Habitação: Renovação horária Rph ≥ 0,5 h⁻¹. Serviços: Caudal ar novo QAN ≥ QAN,mín com controlo CO₂ ≤ 1250 ppm.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"...os edifícios de habitação novos (...) devem apresentar uma taxa de renovação de ar horária (Rph) igual ou superior a 0,5 renovações por hora."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Integração de sistema de ventilação higrorregulável ou VMC com recuperação de calor para assegurar caudais contínuos.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">5. Sistemas técnicos e Isolamento AQS</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Artigos 10.º, 13.º, 14.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Isolamento térmico de tubagens de AQS/Aquecimento com R ≥ 0,25 (m².°C)/W. SACE obrigatório se sistema ≥ 290 kW.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Os sistemas técnicos dos edifícios devem ser projetados, instalados e operados de forma a possibilitarem as necessárias manutenções..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Especificar equipamento HVAC de elevada eficiência (COP/SEER elevados) e isolamento certificado das redes hídricas.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">6. Renováveis e Interdição de Fósseis</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Art. 6.º; DL 11/2025, Art. 1.º, 2.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Quota mínima obriga a sistemas renováveis (RenHab e RenC&S). Proibição de incentivos a caldeiras fósseis desde 01/01/2025.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"A partir de 1 de janeiro de 2025 deixam de ser concedidos incentivos financeiros à instalação de caldeiras autónomas a combustíveis fósseis..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Integração obriga a painéis solares térmicos/fotovoltaicos ou bombas de calor, banindo caldeiras a gás autónomas.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-semibold text-slate-900 border-r border-slate-200">7. Certificação Energética e Classe</td>
+                                <td class="p-3.5 border-r border-slate-200 font-mono text-slate-600">DL 101-D/2020, Artigos 18.º, 19.º</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Pré-Certificado Energético (PCE) obrigatório para licenciamento. Classe energética mínima exigida: Classe B- ou superior.</td>
+                                <td class="p-3.5 border-r border-slate-200 italic text-slate-600">"Estão sujeitos ao cumprimento da obrigação de certificação energética: a) A construção de edifícios novos..." / "Pré-certificado energético, emitido antes do início..."</td>
+                                <td class="p-3.5 border-r border-slate-200 text-slate-700">Emitir junto de Perito Qualificado o PCE com classe B- ou A para instrução formal do processo de licenciamento no RJUE.</td>
+                                <td class="p-3.5 text-slate-500 font-mono">26/10/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 mt-12 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-semibold text-slate-200">Dossier Técnico de Engenharia & Urbanismo Português</p>
+                <p class="text-slate-500 mt-0.5">Elaborado estritamente com base nos diplomas vigentes e quadros verificados.</p>
+            </div>
+            <div class="flex items-center space-x-6 text-slate-400">
+                <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1.5"></i> Sem Conhecimento Externo / Sem Inferências</span>
+                <span><i class="fa-solid fa-code text-slate-500 mr-1.5"></i> Documento Técnico Oficial</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client-Side Interactive Filtering Script -->
+    <script>
+        function filterAllTables() {
+            const input = document.getElementById('tableSearch');
+            const filter = input.value.toLowerCase();
+            const tables = document.querySelectorAll('.searchable-table');
+
+            tables.forEach(table => {
+                const trs = table.querySelectorAll('tbody tr');
+                trs.forEach(tr => {
+                    const text = tr.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        tr.style.display = '';
+                    } else {
+                        tr.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        function copyShareLink() {
+            const textToCopy = `Dossier Técnico Urbanístico - Parcela São Domingos de Benfica [38.7508, -9.1744]\nÁrea: 26316.52m² | Uso Misto | 5 Pisos | 1125m² de Construção\nVerificações PDM, RJUE, RGEU, DL 163/2006 e DL 101-D/2020 concluídas.`;
+            
+            // Fallback execCommand for iframe compatibility
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = textToCopy;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            // Visual notification toast
+            const toast = document.createElement("div");
+            toast.className = "fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-2.5 rounded-lg shadow-xl text-xs z-50 border border-slate-700 flex items-center space-x-2";
+            toast.innerHTML = `<i class="fa-solid fa-check-circle text-emerald-400"></i><span>Resumo de dados copiado para a área de transferência!</span>`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
